@@ -445,116 +445,217 @@ $Label5.height                   = 10
 $Label5.location                 = New-Object System.Drawing.Point(61,544)
 $Label5.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',8)
 
+$customInstall                   = New-Object system.Windows.Forms.Button
+$customInstall.text              = "Custom Install"
+$customInstall.width             = 212
+$customInstall.height            = 30
+$customInstall.location          = New-Object System.Drawing.Point(4,594)
+$customInstall.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
 $Form.controls.AddRange(@($Panel1,$Panel2,$Label3,$Label15,$Panel4,$PictureBox1,$Label1,$Label4,$Panel3))
-$Panel1.controls.AddRange(@($brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$honeyview))
+$Panel1.controls.AddRange(@($brave,$firefox,$7zip,$irfanview,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$honeyview,$customInstall))
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$actioncenter,$darkmode,$visualfx,$onedrive,$lightmode,$removebloat,$WarningLabel,$Label5))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
 $Panel3.controls.AddRange(@($essentialundo,$EActionCenter,$ECortana,$RBackgroundApps,$HTrayIcons,$EClipboardHistory,$ELocation,$InstallOneDrive,$yourphonefix,$reinstallbloat))
 
 $brave.Add_Click({
     Write-Host "Installing Brave Browser"
-    winget install BraveSoftware.BraveBrowser | Out-Host
+    winget install --source winget BraveSoftware.BraveBrowser | Out-Host
     if($?) { Write-Host "Installed Brave Browser" }
 })
 
 $firefox.Add_Click({
     Write-Host "Installing Firefox"
-    winget install Mozilla.Firefox | Out-Host
+    winget install --source winget Mozilla.Firefox | Out-Host
     if($?) { Write-Host "Installed Firefox" }
 })
 
 $gchrome.Add_Click({
     Write-Host "Installing Google Chrome"
-    winget install Google.Chrome | Out-Host
+    winget install --source winget Google.Chrome | Out-Host
     if($?) { Write-Host "Installed Google Chrome" }
 })
 
 $irfanview.Add_Click({
     Write-Host "Installing Irfanview (Image Viewer)"
-    winget install IrfanSkiljan.IrfanView | Out-Host
+    winget install --source winget IrfanSkiljan.IrfanView | Out-Host
     if($?) { Write-Host "Installed Irfanview (Image Viewer)" }
 })
 $imageglass.Add_Click({
     Write-Host "Installing Image Glass (Image Viewer)"
-    winget install DuongDieuPhap.ImageGlass | Out-Host
+    winget install --source winget DuongDieuPhap.ImageGlass | Out-Host
     if($?) { Write-Host "Installed Image Glass (Image Viewer)" }
 })
 $honeyview.Add_Click({
     Write-Host "Installing Bandisoft Honeyview (Image Viewer)"
-    winget install Bandisoft.Honeyview | Out-Host
+    winget install --source winget Bandisoft.Honeyview | Out-Host
     if($?) { Write-Host "Installed Honeyview (Image Viewer)" }
 })
 
 $adobereader.Add_Click({
     Write-Host "Installing Adobe Reader DC"
-    winget install Adobe.AdobeAcrobatReaderDC | Out-Host
+    winget install --source winget Adobe.AdobeAcrobatReaderDC | Out-Host
     if($?) { Write-Host "Installed Adobe Reader DC" }
 })
 
 $notepad.Add_Click({
     Write-Host "Installing Notepad++"
-    winget install Notepad++.Notepad++ | Out-Host
+    winget install --source winget Notepad++.Notepad++ | Out-Host
     if($?) { Write-Host "Installed Notepad++" }
 })
 
 $vlc.Add_Click({
     Write-Host "Installing VLC Media Player"
-    winget install VideoLAN.VLC | Out-Host
+    winget install --source winget VideoLAN.VLC | Out-Host
     if($?) { Write-Host "Installed VLC Media Player" }
 })
 
 $mpc.Add_Click({
     Write-Host "Installing Media Player Classic"
-    winget install clsid2.mpc-hc | Out-Host
+    winget install --source winget clsid2.mpc-hc | Out-Host
     if($?) { Write-Host "Installed Media Player Classic" }
 })
 
 $7zip.Add_Click({
     Write-Host "Installing 7-Zip Compression Tool"
-    winget install 7zip.7zip | Out-Host
+    winget install --source winget 7zip.7zip | Out-Host
     if($?) { Write-Host "Installed 7-Zip Compression Tool" }
 })
 
 $vscode.Add_Click({
     Write-Host "Installing Visual Studio Code"
-    winget install Microsoft.VisualStudioCode | Out-Host
+    winget install --source winget Microsoft.VisualStudioCode | Out-Host
     if($?) { Write-Host "Installed Visual Studio Code" }
 })
 
 $vscodium.Add_Click({
     Write-Host "Installing VS Codium"
-    winget install VSCodium.VSCodium | Out-Host
+    winget install --source winget VSCodium.VSCodium | Out-Host
     if($?) { Write-Host "Installed VS Codium" }
 })
 
 $winterminal.Add_Click({
     Write-Host "Installing New Windows Terminal"
-    winget install Microsoft.WindowsTerminal | Out-Host
+    winget install --source winget Microsoft.WindowsTerminal | Out-Host
     if($?) { Write-Host "Installed New Windows Terminal" }
 })
 
 $powertoys.Add_Click({
     Write-Host "Installing Microsoft PowerToys"
-    winget install Microsoft.PowerToys | Out-Host
+    winget install --source winget Microsoft.PowerToys | Out-Host
     if($?) { Write-Host "Installed Microsoft PowerToys" }
 })
 
 $everythingsearch.Add_Click({
     Write-Host "Installing Voidtools Everything Search"
-    winget install voidtools.Everything | Out-Host
+    winget install --source winget voidtools.Everything | Out-Host
     if($?) { Write-Host "Installed Everything Search" }
 })
 
 $sumatrapdf.Add_Click({
     Write-Host "Installing Sumatra PDF"
-    winget install SumatraPDF.SumatraPDF | Out-Host
+    winget install --source winget SumatraPDF.SumatraPDF | Out-Host
     if($?) { Write-Host "Installed Sumatra PDF" }
 })
 
 $openshell.Add_Click({
     Write-Host "Installing OpenShell (Old Windows menu)"
-    winget install openshellmenu | Out-Host
+    winget install --source winget openshellmenu | Out-Host
     Write-Host "Installed OpenShell"
+})
+
+$customInstall.Add_Click({
+    Write-Host "Custom Install"
+
+    Write-Host "Installing Brave Browser"
+    winget install --source winget BraveSoftware.BraveBrowser | Out-Host
+    if($?) { Write-Host "Installed Brave Browser" }
+
+    Write-Host "Installing Google Chrome"
+    winget install --source winget Google.Chrome | Out-Host
+    if($?) { Write-Host "Installed Google Chrome" }
+
+    Write-Host "Installing Visual Studio Code"
+    winget install --source winget Microsoft.VisualStudioCode | Out-Host
+    if($?) { Write-Host "Installed Visual Studio Code" }
+
+    Write-Host "Installing Notepad++"
+    winget install --source winget Notepad++.Notepad++ | Out-Host
+    if($?) { Write-Host "Installed Notepad++" }
+
+    Write-Host "Installing New Windows Terminal"
+    winget install --source winget Microsoft.WindowsTerminal | Out-Host
+    if($?) { Write-Host "Installed New Windows Terminal" }
+
+    Write-Host "Installing WinMerge"
+    winget install --source winget WinMerge.WinMerge | Out-Host
+    if($?) { Write-Host "Installed WinMerge" }
+
+    Write-Host "Installing Git"
+    winget install --source winget Git.Git | Out-Host
+    if($?) { Write-Host "Installed Git" }
+
+    Write-Host "Installing Authy"
+    winget install --source winget Twilio.Authy | Out-Host
+    if($?) { Write-Host "Installed Authy" }
+
+    Write-Host "Installing 7-Zip Compression Tool"
+    winget install --source winget 7zip.7zip | Out-Host
+    if($?) { Write-Host "Installed 7-Zip Compression Tool" }
+
+    Write-Host "Installing Image Glass (Image Viewer)"
+    winget install --source winget DuongDieuPhap.ImageGlass | Out-Host
+    if($?) { Write-Host "Installed Image Glass (Image Viewer)" }
+
+    Write-Host "Installing VLC Media Player"
+    winget install --source winget VideoLAN.VLC | Out-Host
+    if($?) { Write-Host "Installed VLC Media Player" }
+
+    Write-Host "Installing LibreOffice"
+    winget install --source winget LibreOffice.LibreOffice | Out-Host
+    if($?) { Write-Host "Installed LibreOffice" }
+
+    Write-Host "Installing Voidtools Everything Search"
+    winget install --source winget voidtools.Everything | Out-Host
+    if($?) { Write-Host "Installed Everything Search" }
+
+    Write-Host "Installing Insync"
+    winget install --source winget Insynchq.Insync | Out-Host
+    if($?) { Write-Host "Installed Insync" }
+
+    Write-Host "Installing ProtonMailBridge"
+    winget install --source winget ProtonTechnologies.ProtonMailBridge | Out-Host
+    if($?) { Write-Host "Installed ProtonMailBridge" }
+
+    Write-Host "Installing Nvidia Broadcast"
+    winget install --source winget Nvidia.Broadcast | Out-Host
+    if($?) { Write-Host "Installed Nvidia Broadcast" }
+
+    Write-Host "Installing Standard Notes"
+    winget install --source winget StandardNotes.StandardNotes | Out-Host
+    if($?) { Write-Host "Installed Standard Notes" }
+
+    Write-Host "Installing Sumatra PDF"
+    winget install --source winget SumatraPDF.SumatraPDF | Out-Host
+    if($?) { Write-Host "Installed Sumatra PDF" }
+
+    Write-Host "Installing Chocolatey"
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	choco install chocolatey-core.extension -y
+
+    Write-Host "Installing Moneydance"
+    choco install -y moneydance
+    if($?) { Write-Host "Installed Moneydance" }
+
+    Write-Host "Installing Fira Code"
+    choco install -y firacode
+    if($?) { Write-Host "Installed Fira Code" }
+
+    Write-Host "Installing Keypirinha"
+    choco install -y keypirinha
+    if($?) { Write-Host "Installed Keypirinha" }
+
+    Write-Host "Custom Install Done"
 })
 
 $essentialtweaks.Add_Click({
@@ -705,10 +806,22 @@ $essentialtweaks.Add_Click({
     Remove-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" -Recurse -ErrorAction SilentlyContinue
 
 	# Network Tweaks
-	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -Name "IRPStackSize" -Type DWord -Value 20
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" -Name "IRPStackSize" -Type DWord -Value 30
 
 	# SVCHost Tweak
-	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name "SvcHostSplitThresholdInKB" -Type DWord -Value 4194304
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control" -Name "SvcHostSplitThresholdInKB" -Type DWord -Value 16777216
+
+    # Write-Host "Disabling Xbox features..."
+	# Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
+	# Get-AppxPackage "Microsoft.XboxIdentityProvider" | Remove-AppxPackage -ErrorAction SilentlyContinue
+	# Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
+	# Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
+	# Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
+	# Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_Enabled" -Type DWord -Value 0
+	# If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR")) {
+	# 	New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR" | Out-Null
+	# }
+	# Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR" -Name "AllowGameDVR" -Type DWord -Value 0
 
     #Write-Host "Installing Windows Media Player..."
 	#Enable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
