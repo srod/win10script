@@ -623,14 +623,14 @@ $customInstall                   = New-Object system.Windows.Forms.Button
 $customInstall.text              = "Custom Install"
 $customInstall.width             = 212
 $customInstall.height            = 30
-$customInstall.location          = New-Object System.Drawing.Point(4,594)
+$customInstall.location          = New-Object System.Drawing.Point(4,231)
 $customInstall.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $Form.controls.AddRange(@($Panel1,$Panel2,$Label3,$Label15,$Panel4,$PictureBox1,$Label1,$Label4,$Panel3,$ResultText,$Label10,$Label11,$urlfixwinstartup,$urlremovevirus,$urlcreateiso))
-$Panel1.controls.AddRange(@($brave,$firefox,$7zip,$sharex,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$gimp,$Label7,$Label8,$Label9,$advancedipscanner,$putty,$etcher,$translucenttb,$githubdesktop,$discord,$autohotkey,$customInstall))
+$Panel1.controls.AddRange(@($brave,$firefox,$7zip,$sharex,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$Label2,$everythingsearch,$sumatrapdf,$vscodium,$imageglass,$gimp,$Label7,$Label8,$Label9,$advancedipscanner,$putty,$etcher,$translucenttb,$githubdesktop,$discord,$autohotkey))
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$actioncenter,$darkmode,$performancefx,$onedrive,$lightmode,$essentialundo,$EActionCenter,$ECortana,$RBackgroundApps,$HTrayIcons,$EClipboardHistory,$ELocation,$InstallOneDrive,$removebloat,$reinstallbloat,$WarningLabel,$Label5,$appearancefx,$STrayIcons,$EHibernation,$dualboottime))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
-$Panel3.controls.AddRange(@($yourphonefix,$Label6,$windowsupdatefix,$ncpa,$oldcontrolpanel,$oldsoundpanel,$Button1))
+$Panel3.controls.AddRange(@($yourphonefix,$Label6,$windowsupdatefix,$ncpa,$oldcontrolpanel,$oldsoundpanel,$Button1,$customInstall))
 
 $brave.Add_Click({
     Write-Host "Installing Brave Browser"
@@ -838,10 +838,6 @@ $gimp.Add_Click({
 $customInstall.Add_Click({
     Write-Host "Custom Install"
 
-    Write-Host "Installing Brave Browser"
-    winget install --source winget BraveSoftware.BraveBrowser | Out-Host
-    if($?) { Write-Host "Installed Brave Browser" }
-
     Write-Host "Installing Google Chrome"
     winget install --source winget Google.Chrome | Out-Host
     if($?) { Write-Host "Installed Google Chrome" }
@@ -894,10 +890,6 @@ $customInstall.Add_Click({
     winget install --source winget Insynchq.Insync | Out-Host
     if($?) { Write-Host "Installed Insync" }
 
-    Write-Host "Installing ProtonMailBridge"
-    winget install --source winget ProtonTechnologies.ProtonMailBridge | Out-Host
-    if($?) { Write-Host "Installed ProtonMailBridge" }
-
     Write-Host "Installing Nvidia Broadcast"
     winget install --source winget Nvidia.Broadcast | Out-Host
     if($?) { Write-Host "Installed Nvidia Broadcast" }
@@ -921,10 +913,6 @@ $customInstall.Add_Click({
     Write-Host "Installing Fira Code"
     choco install -y firacode
     if($?) { Write-Host "Installed Fira Code" }
-
-    Write-Host "Installing Keypirinha"
-    choco install -y keypirinha
-    if($?) { Write-Host "Installed Keypirinha" }
 
     Write-Host "Custom Install Done"
 })
